@@ -74,7 +74,7 @@ productRouter.get('/category/:id', async (req, res) => {
         const { id } = req.params
         if (!id.match(/^[0-9a-fA-F]{24}$/)) {
             res.status(500).send({
-                message: "the provided id is not vzlid"
+                message: "the provided id is not valid"
             })
         }
         const products = await Product.find({ category: id})
